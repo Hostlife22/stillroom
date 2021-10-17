@@ -24,3 +24,136 @@ body {
     -webkit-background-clip: text;
     animation: wave 7s infinite;
 }
+
+.header {
+    width: 80%;
+    margin: 0 auto;
+}
+.header h1 {
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.1);
+    background-image: url(../img/bg2.png);
+    -webkit-background-clip: text;
+    animation: wave 7s infinite;
+}
+@keyframes wave {
+    from {
+        background-position: left 0 top 0;
+    }
+    to {
+        background-position: left 700px top 0;
+    }
+}
+main {
+    margin: 0 auto;
+    width: 70%;
+}
+.wrapper {
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 10px solid #fff;
+    border-radius: 10px;
+    background-color: #020202;
+    -webkit-box-shadow: 2px 30px 73px 34px rgba(20, 48, 116, 0.41);
+    -moz-box-shadow: 2px 30px 73px 34px rgba(20, 48, 116, 0.41);
+    box-shadow: 2px 30px 73px 34px rgba(20, 48, 116, 0.41);
+}
+
+.wrapper-slider {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.wrapper-slider > input {
+    display: none;
+}
+
+.element__item {
+    display: none;
+    animation: slider 1.3s ease-out;
+}
+
+.slider__article {
+    display: none;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: 1rem;
+}
+
+@-webkit-keyframes slider {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slider {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes article {
+    0% {
+        color: rgba(225, 218, 202, 0.5);
+    }
+    20% {
+        color: rgba(234, 193, 237, 0.5);
+    }
+    40% {
+        color: rgba(191, 122, 152, 0.5);
+    }
+    60% {
+        color: rgba(198, 109, 228, 0.5);
+    }
+    80% {
+        color: rgba(167, 131, 225, 0.5);
+    }
+    100% {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes article {
+    0% {
+        color: rgba(225, 218, 202, 0.5);
+    }
+    20% {
+        color: rgba(234, 193, 237, 0.5);
+    }
+    40% {
+        color: rgba(191, 122, 152, 0.5);
+    }
+    60% {
+        color: rgba(198, 109, 228, 0.5);
+    }
+    80% {
+        color: rgba(167, 131, 225, 0.5);
+    }
+    100% {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
