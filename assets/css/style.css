@@ -10,8 +10,8 @@ html {
 
 body {
     background: url(../img/bg.jpg) no-repeat;
-
     background-size: 100%;
+    padding-top: 10px;
 }
 
 .header {
@@ -20,7 +20,7 @@ body {
 }
 .header h1 {
     text-align: center;
-    font-size: 5rem;
+    font-size: 2rem;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.1);
     background-image: url(../img/bg2.png);
@@ -41,7 +41,6 @@ main {
 }
 .wrapper {
     margin: 0 auto;
-    padding-top: 40px;
     padding-bottom: 40px;
     border: 10px solid #fff;
     border-radius: 10px;
@@ -229,6 +228,24 @@ main {
 #radio5:checked ~ .slider__bottom > .slider__container-article > .slider__article5 {
     display: block;
 }
+@media screen and (max-width: 400px) {
+    .header h1 {
+        margin: 15px 0 15px 0;
+        font-size: 1rem;
+    }
+    .bar {
+        width: 20px;
+        height: 20px;
+    }
+    .slider__article {
+        font-size: 0.7rem;
+    }
+}
+@media screen and (max-width: 590px) {
+    .slider__article {
+        text-align: center;
+    }
+}
 
 @media screen and (min-width: 768px) {
     .slider__bottom {
@@ -238,15 +255,8 @@ main {
         justify-content: space-between;
         align-content: flex-start;
     }
-
-    .slider__container-article {
-        margin-right: 5%;
-        width: 65%;
-    }
-
-    .navigation {
-        margin: 0;
-        width: 30%;
+    .header h1 {
+        font-size: 2rem;
     }
 
     .bar {
@@ -259,9 +269,21 @@ main {
         width: 20px;
         height: 20px;
     }
+    .slider__container-article {
+        margin-right: 5%;
+        width: 65%;
+    }
+
+    .navigation {
+        margin: 0;
+        width: 30%;
+    }
 }
 
 @media screen and (min-width: 1024px) {
+    .header h1 {
+        font-size: 3rem;
+    }
     .slider__container-article {
         width: 75%;
     }
@@ -278,6 +300,9 @@ main {
 }
 
 @media screen and (min-width: 1400px) {
+    .header h1 {
+        font-size: 5rem;
+    }
     .bar::before {
         width: 40px;
         height: 40px;
