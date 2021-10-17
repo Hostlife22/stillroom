@@ -5,24 +5,13 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+html {
+}
+
 body {
     background: url(../img/bg.jpg) no-repeat;
 
     background-size: 100%;
-}
-
-.header {
-    width: 80%;
-    margin: 0 auto;
-}
-.header h1 {
-    text-align: center;
-    font-size: 5rem;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.1);
-    background-image: url(../img/bg2.png);
-    -webkit-background-clip: text;
-    animation: wave 7s infinite;
 }
 
 .header {
@@ -157,7 +146,6 @@ main {
         color: rgba(255, 255, 255, 0.5);
     }
 }
-
 .navigation {
     display: flex;
     justify-content: space-between;
@@ -178,7 +166,7 @@ main {
     border-radius: 20px;
 }
 
-. {
+.bar {
     display: block;
     width: 30px;
     height: 30px;
@@ -194,7 +182,7 @@ main {
     animation: article 5.2s infinite;
 }
 
-.:before {
+.bar:before {
     content: "";
     display: block;
     width: 40px;
@@ -202,18 +190,18 @@ main {
     transform: translate(-50%, -50%);
 }
 
-.:hover,
-.:focus {
+.bar:hover,
+.bar:focus {
     transform: scale(1.1);
     background-color: #fff;
     border-color: #fff;
 }
 
-.:last-child {
+.bar:last-child {
     margin-right: 0;
 }
 
-.:first-child {
+.bar:first-child {
     margin-left: 0;
 }
 
@@ -261,13 +249,13 @@ main {
         width: 30%;
     }
 
-    . {
+    .bar {
         width: 16px;
         height: 16px;
         border-width: 2px;
     }
 
-    .::before {
+    .bar::before {
         width: 20px;
         height: 20px;
     }
@@ -283,21 +271,21 @@ main {
         width: 20%;
     }
 
-    .::before {
+    .bar::before {
         width: 25px;
         height: 25px;
     }
 }
 
 @media screen and (min-width: 1400px) {
-    .::before {
+    .bar::before {
         width: 40px;
         height: 40px;
     }
 }
 
 @media screen and (min-width: 1920px) {
-    .::before {
+    .bar::before {
         width: 50px;
         height: 50px;
     }
