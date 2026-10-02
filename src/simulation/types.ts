@@ -1,4 +1,5 @@
 export type Coordinates = [number, number, number];
+
 export type Tool = 'grab' | 'wind' | 'cut';
 
 export interface SimulationSettings {
@@ -16,6 +17,7 @@ export type SetSetting = <Key extends keyof SimulationSettings>(
   key: Key,
   value: SimulationSettings[Key],
 ) => void;
+
 export type Notify = (message: string) => void;
 
 export interface SimulationStats {

@@ -1,11 +1,11 @@
-import type { SceneEngine, SetSetting } from '../simulation/types.ts';
-import type { SettingsAction } from './settings.ts';
 import { useCallback, useReducer, useRef, useState } from 'react';
-import { createInitialState, settingsReducer } from './settings.ts';
-import { useNotice } from '../hooks/useNotice.ts';
 import { useAmbientSound } from '../hooks/useAmbientSound.ts';
 import { useFullscreen } from '../hooks/useFullscreen.ts';
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts.ts';
+import { useNotice } from '../hooks/useNotice.ts';
+import type { SceneEngine, SetSetting } from '../simulation/types.ts';
+import { createInitialState, settingsReducer } from './settings.ts';
+import type { SettingsAction } from './settings.ts';
 
 /** Coordinates UI state and commands; the engine owns all simulation state. */
 export function useStillroom() {

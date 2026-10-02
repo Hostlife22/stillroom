@@ -1,6 +1,6 @@
+import * as THREE from 'three';
 import type { Cloth } from '../physics/Cloth.ts';
 import type { SimulationSettings } from '../types.ts';
-import * as THREE from 'three';
 
 /** Projects solver data into GPU buffers without allocating geometry each frame. */
 export function createClothView(cloth: Cloth) {

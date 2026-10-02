@@ -1,5 +1,5 @@
-import type { SetSetting, Tool } from '../simulation/types.ts';
 import { useEffect } from 'react';
+import type { SetSetting, Tool } from '../simulation/types.ts';
 
 export function useKeyboardShortcuts({
   setSetting,

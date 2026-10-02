@@ -1,6 +1,11 @@
 import { Hand, Wind, Scissors, X, ArrowUpRight } from 'lucide-react';
 import { useDialogFocus } from '../hooks/useDialogFocus.ts';
-export function HelpDialog({ onClose }: { onClose: () => void }) {
+
+interface HelpDialogProps {
+  onClose: () => void;
+}
+
+export function HelpDialog({ onClose }: HelpDialogProps) {
   const dialogRef = useDialogFocus(onClose);
   return (
     <div className="modal-backdrop" onClick={onClose}>

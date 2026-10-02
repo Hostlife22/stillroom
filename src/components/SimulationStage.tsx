@@ -1,15 +1,3 @@
-import type { RefObject } from 'react';
-import type { ClothSceneProps } from './ClothScene.tsx';
-interface StageProps extends ClothSceneProps {
-  stageRef: RefObject<HTMLElement | null>;
-  sound: boolean;
-  fullscreen: boolean;
-  notice: string;
-  toggleSound: () => void;
-  toggleFullscreen: () => void;
-  togglePause: () => void;
-  reset: () => void;
-}
 import {
   Hand,
   RotateCcw,
@@ -21,7 +9,21 @@ import {
   Minimize2,
   Check,
 } from 'lucide-react';
+import type { RefObject } from 'react';
 import { ClothScene } from './ClothScene.tsx';
+import type { ClothSceneProps } from './ClothScene.tsx';
+
+interface SimulationStageProps extends ClothSceneProps {
+  stageRef: RefObject<HTMLElement | null>;
+  sound: boolean;
+  fullscreen: boolean;
+  notice: string;
+  toggleSound: () => void;
+  toggleFullscreen: () => void;
+  togglePause: () => void;
+  reset: () => void;
+}
+
 export function SimulationStage({
   settings,
   stageRef,
@@ -34,7 +36,7 @@ export function SimulationStage({
   togglePause,
   reset,
   notice,
-}: StageProps) {
+}: SimulationStageProps) {
   return (
     <section className="stage" ref={stageRef}>
       <ClothScene settings={settings} engineRef={engineRef} onStats={onStats} />

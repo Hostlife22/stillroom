@@ -1,6 +1,6 @@
-import type { Particle, Constraint, Face, Grab, Forces } from './types.ts';
 import { CLOTH_CONFIG } from './config.ts';
 import { createClothGrid } from './createClothGrid.ts';
+import type { Particle, Constraint, Face, Grab, Forces } from './types.ts';
 
 /** Particle solver. Positions are plain arrays; this module has no rendering dependencies. */
 export class Cloth {

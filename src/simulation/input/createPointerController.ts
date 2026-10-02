@@ -1,7 +1,7 @@
+import { Plane, Raycaster, Vector2, Vector3 } from 'three';
 import type { Camera, Mesh } from 'three';
 import type { Simulation } from '../Simulation.ts';
 import type { Tool } from '../types.ts';
-import { Plane, Raycaster, Vector2, Vector3 } from 'three';
 
 const DEFAULT_DEPTH = 0.6;
 const CUT_SPACING = 0.08;

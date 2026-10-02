@@ -1,9 +1,9 @@
-import { useStillroom } from './useStillroom.ts';
+import { ControlPanel } from '../components/ControlPanel.tsx';
+import { HelpDialog } from '../components/HelpDialog.tsx';
 import { PageHeader, PageIntro, PageFooter } from '../components/PageLayout.tsx';
 import { SimulationStage } from '../components/SimulationStage.tsx';
-import { ControlPanel } from '../components/ControlPanel.tsx';
 import { StatusBar } from '../components/StatusBar.tsx';
-import { HelpDialog } from '../components/HelpDialog.tsx';
+import { useStillroom } from './useStillroom.ts';
 
 export function App() {
   const room = useStillroom();

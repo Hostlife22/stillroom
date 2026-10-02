@@ -33,6 +33,20 @@ export default tseslint.config(
         { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' },
       ],
       'prefer-const': 'error',
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'Program > :not(ImportDeclaration) ~ ImportDeclaration',
+          message: 'Place all imports before interfaces, types, and executable code.',
+        },
+      ],
+      'padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: 'import', next: '*' },
+        { blankLine: 'any', prev: 'import', next: 'import' },
+        { blankLine: 'always', prev: '*', next: 'export' },
+        { blankLine: 'always', prev: 'export', next: '*' },
+      ],
     },
   },
   {

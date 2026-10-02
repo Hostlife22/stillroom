@@ -1,18 +1,15 @@
-import type { CSSProperties } from 'react';
 import { useId } from 'react';
-export function Range({
-  label,
-  value,
-  onChange,
-  left,
-  right,
-}: {
+import type { CSSProperties } from 'react';
+
+interface RangeProps {
   label: string;
   value: number;
   onChange: (value: number) => void;
   left: string;
   right: string;
-}) {
+}
+
+export function Range({ label, value, onChange, left, right }: RangeProps) {
   const id = useId();
   return (
     <div className="range-group">

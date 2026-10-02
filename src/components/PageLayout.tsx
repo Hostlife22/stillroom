@@ -1,5 +1,10 @@
 import { ArrowUpRight, Info } from 'lucide-react';
-export function PageHeader({ onHelp }: { onHelp: () => void }) {
+
+interface PageLayoutProps {
+  onHelp: () => void;
+}
+
+export function PageHeader({ onHelp }: PageLayoutProps) {
   return (
     <header className="header">
       <a className="brand" href="./" aria-label="Stillroom home">
@@ -18,6 +23,7 @@ export function PageHeader({ onHelp }: { onHelp: () => void }) {
     </header>
   );
 }
+
 export function PageIntro() {
   return (
     <section className="intro">
@@ -36,7 +42,8 @@ export function PageIntro() {
     </section>
   );
 }
-export function PageFooter({ onHelp }: { onHelp: () => void }) {
+
+export function PageFooter({ onHelp }: PageLayoutProps) {
   return (
     <footer>
       <p>Nothing to finish. Just something to feel.</p>

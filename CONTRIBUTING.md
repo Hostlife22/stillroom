@@ -39,6 +39,8 @@ Read [Architecture](docs/ARCHITECTURE.md) for module boundaries. Use TypeScript 
 | Physics tests                                              | `src/simulation/physics/Cloth.test.ts`           |
 | GitHub Pages deployment                                    | `.github/workflows/deploy.yml`, `vite.config.ts` |
 
+Keep modules in this order: all imports, a blank line, interfaces and types, a blank line, then the component or implementation. ESLint enforces imports at the top and blank lines around exported declarations.
+
 Keep changes focused. Follow the existing formatting, reuse interface components and CSS variables, and explain any changes to the solver's timestep or constraint behavior. Avoid adding dependencies for functionality already available in the project or browser.
 
 Preserve pause, reset, pointer cancellation, and cleanup behavior. Read [ACCESSIBILITY.md](ACCESSIBILITY.md) before changing controls or interaction patterns.

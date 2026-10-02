@@ -1,6 +1,6 @@
-import type { Particle, Constraint, Face, ClothGrid } from './types.ts';
 import type { Coordinates } from '../types.ts';
 import { CLOTH_CONFIG } from './config.ts';
+import type { Particle, Constraint, Face, ClothGrid } from './types.ts';
 
 export function createClothGrid(config = CLOTH_CONFIG): ClothGrid {
   const { columns, rows, left, top, width, height, depth, foldCount, foldAmplitude } = config;

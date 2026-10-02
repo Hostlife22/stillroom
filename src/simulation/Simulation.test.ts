@@ -1,5 +1,5 @@
-import test from 'node:test';
 import assert from 'node:assert/strict';
+import test from 'node:test';
 import { Simulation } from './Simulation.ts';
 import type { SimulationSettings } from './types.ts';
 

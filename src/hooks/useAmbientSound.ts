@@ -1,5 +1,5 @@
-import type { Notify } from '../simulation/types.ts';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import type { Notify } from '../simulation/types.ts';
 
 function createAmbientAudio() {
   const AudioContextConstructor =

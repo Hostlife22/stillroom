@@ -1,12 +1,13 @@
+import { useEffect, useRef, useState } from 'react';
 import type { RefObject } from 'react';
+import { createSceneEngine } from '../simulation/createSceneEngine.ts';
 import type { SceneEngine, SimulationSettings, SimulationStats } from '../simulation/types.ts';
+
 export interface ClothSceneProps {
   settings: SimulationSettings;
   engineRef: RefObject<SceneEngine | null>;
   onStats: (stats: SimulationStats) => void;
 }
-import { useEffect, useRef, useState } from 'react';
-import { createSceneEngine } from '../simulation/createSceneEngine.ts';
 
 export function ClothScene({ settings, engineRef, onStats }: ClothSceneProps) {
   const host = useRef<HTMLDivElement>(null);

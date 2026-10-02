@@ -1,6 +1,6 @@
+import { useCallback, useEffect, useState } from 'react';
 import type { RefObject } from 'react';
 import type { Notify } from '../simulation/types.ts';
-import { useCallback, useEffect, useState } from 'react';
 
 export function useFullscreen(elementRef: RefObject<HTMLElement | null>, notify: Notify) {
   const [fullscreen, setFullscreen] = useState(false);

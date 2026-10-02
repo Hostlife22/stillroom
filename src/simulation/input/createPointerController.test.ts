@@ -1,11 +1,11 @@
-import test from 'node:test';
 import assert from 'node:assert/strict';
+import test from 'node:test';
 import { PerspectiveCamera, Vector3, Scene } from 'three';
-import { Simulation } from '../Simulation.ts';
 import { createClothView } from '../rendering/createClothView.ts';
 import { disposeScene } from '../rendering/disposeScene.ts';
-import { createPointerController } from './createPointerController.ts';
+import { Simulation } from '../Simulation.ts';
 import type { Tool } from '../types.ts';
+import { createPointerController } from './createPointerController.ts';
 
 // Only the DOM surface is replaced; raycasting, cloth geometry, and physics are real.
 class PointerSurface extends EventTarget {

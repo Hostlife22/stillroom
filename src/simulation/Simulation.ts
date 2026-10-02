@@ -1,6 +1,6 @@
-import type { SimulationSettings, SimulationStats } from './types.ts';
 import { Cloth } from './physics/Cloth.ts';
 import { SOLVER_CONFIG } from './physics/config.ts';
+import type { SimulationSettings, SimulationStats } from './types.ts';
 
 /** Owns simulation time and wind independently of requestAnimationFrame and React. */
 export class Simulation {

@@ -1,6 +1,7 @@
-import test from 'node:test';
 import assert from 'node:assert/strict';
+import test from 'node:test';
 import { Cloth } from './Cloth.ts';
+
 test('cloth remains finite and pinned during sustained extreme wind and dragging', () => {
   const c = new Cloth();
   c.grab = { index: 700, target: [4.5, 5, 3] };

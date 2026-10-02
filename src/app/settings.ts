@@ -4,6 +4,7 @@ export interface SettingsState {
   settings: SimulationSettings;
   preset: string;
 }
+
 export type SettingsAction =
   | {
       [Key in keyof SimulationSettings]: { type: 'set'; key: Key; value: SimulationSettings[Key] };

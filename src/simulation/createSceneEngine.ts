@@ -1,10 +1,10 @@
-import type { SceneEngine, SimulationSettings, SimulationStats } from './types.ts';
 import * as THREE from 'three';
-import { Simulation } from './Simulation.ts';
 import { createPointerController } from './input/createPointerController.ts';
 import { createClothView } from './rendering/createClothView.ts';
 import { createRoom } from './rendering/createRoom.ts';
 import { disposeScene } from './rendering/disposeScene.ts';
+import { Simulation } from './Simulation.ts';
+import type { SceneEngine, SimulationSettings, SimulationStats } from './types.ts';
 
 const STATS_INTERVAL = 700;
 

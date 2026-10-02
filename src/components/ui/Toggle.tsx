@@ -1,15 +1,13 @@
 import type { LucideIcon } from 'lucide-react';
-export function Toggle({
-  label,
-  checked,
-  onChange,
-  icon: Icon,
-}: {
+
+interface ToggleProps {
   label: string;
   checked: boolean;
   onChange: () => void;
   icon: LucideIcon;
-}) {
+}
+
+export function Toggle({ label, checked, onChange, icon: Icon }: ToggleProps) {
   return (
     <label className="toggle-row">
       <span>

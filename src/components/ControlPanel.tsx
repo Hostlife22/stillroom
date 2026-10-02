@@ -1,20 +1,18 @@
-import type { CSSProperties } from 'react';
-import type { SimulationSettings, SetSetting } from '../simulation/types.ts';
 import { Wind, Hand, Scissors, RotateCcw, Sun, Check, Grid2X2 } from 'lucide-react';
+import type { CSSProperties } from 'react';
 import { FABRIC_COLORS } from '../app/settings.ts';
+import type { SimulationSettings, SetSetting } from '../simulation/types.ts';
 import { Range } from './ui/Range.tsx';
 import { Toggle } from './ui/Toggle.tsx';
-export function ControlPanel({
-  settings,
-  setSetting,
-  addGust,
-  reset,
-}: {
+
+interface ControlPanelProps {
   settings: SimulationSettings;
   setSetting: SetSetting;
   addGust: () => void;
   reset: () => void;
-}) {
+}
+
+export function ControlPanel({ settings, setSetting, addGust, reset }: ControlPanelProps) {
   return (
     <aside className="panel">
       <div className="panel-title">

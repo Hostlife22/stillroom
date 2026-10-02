@@ -1,5 +1,5 @@
-import test from 'node:test';
 import assert from 'node:assert/strict';
+import test from 'node:test';
 import { createInitialState, settingsReducer } from './settings.ts';
 
 test('reduced motion is respected without sharing mutable settings', () => {

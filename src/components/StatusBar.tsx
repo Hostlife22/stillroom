@@ -1,19 +1,16 @@
-import type { SimulationSettings, SimulationStats } from '../simulation/types.ts';
 import { ChevronDown, Download, Leaf } from 'lucide-react';
 import { PRESETS } from '../app/settings.ts';
-export function StatusBar({
-  settings,
-  preset,
-  selectPreset,
-  stats,
-  saveImage,
-}: {
+import type { SimulationSettings, SimulationStats } from '../simulation/types.ts';
+
+interface StatusBarProps {
   settings: SimulationSettings;
   preset: string;
   selectPreset: (name: string) => void;
   stats: SimulationStats;
   saveImage: () => void;
-}) {
+}
+
+export function StatusBar({ settings, preset, selectPreset, stats, saveImage }: StatusBarProps) {
   return (
     <div className="under-scene">
       <div className="preset">
