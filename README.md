@@ -27,7 +27,7 @@ npm ci
 npm run dev
 ```
 
-Open the local address printed by Vite, usually `http://localhost:5173`.
+Open the local address printed by Vite, usually `http://localhost:5173/stillroom/`.
 
 To try the production build:
 
@@ -36,7 +36,23 @@ npm run build
 npm run preview
 ```
 
-Vite writes the static site to `dist/`. That directory can be deployed to a static hosting service. For hosting under a subpath, configure Vite's `base` to match the deployment path.
+Vite writes the static site to `dist/`. The base path is `/stillroom/` for GitHub Pages. The preview is available at `http://localhost:4173/stillroom/`.
+
+## Automatic deployment to GitHub Pages
+
+The workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs after every push to **`main` or `master`**. It installs dependencies from the lockfile, checks formatting and lint rules, runs physics tests, builds the site, and deploys `dist/` only after all checks pass.
+
+One-time setup in the GitHub repository:
+
+1. Open **Settings → Pages → Build and deployment**.
+2. Set **Source** to **GitHub Actions**.
+3. Push the workflow and configuration to `main` or `master`.
+
+After the first successful deployment, the app is available at **<https://hostlife22.github.io/stillroom/>**. Follow the run in **Actions → Deploy to GitHub Pages**. You can also start a deployment manually using **Run workflow** on `main` or `master`.
+
+The workflow uses GitHub's built-in token; no personal access token or custom secret is needed. The generated site is uploaded as a Pages artifact, so the `gh-pages` branch does not need to be updated. If the `github-pages` environment has branch restrictions, allow the branch you deploy from.
+
+This follows the [Vite GitHub Pages deployment guide](https://vite.dev/guide/static-deploy.html#github-pages).
 
 ## Controls
 
@@ -102,6 +118,7 @@ src/
   styles.css        Design tokens, layout, controls, and responsive styles
 docs/
   stillroom.png       Full-page screenshot
+vite.config.js      Vite configuration and GitHub Pages base path
 eslint.config.js    ESLint configuration
 .prettierrc.json     Formatting rules
 ```
