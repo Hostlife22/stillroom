@@ -1,0 +1,145 @@
+.header {
+  height: 90px;
+  margin: 0 5%;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+}
+.brand-period {
+  color: #87906d;
+}
+.brand-icon {
+  display: flex;
+  gap: 3px;
+  margin-right: 12px;
+  height: 26px;
+  align-items: center;
+}
+.brand-icon i {
+  height: 25px;
+  width: 4px;
+  background: var(--green);
+  border-radius: 4px;
+  transform: skewY(-16deg);
+}
+.brand-icon i:nth-child(2) {
+  height: 21px;
+}
+.brand-icon i:nth-child(3) {
+  height: 27px;
+}
+.brand-icon i:nth-child(4) {
+  height: 22px;
+}
+.header-caption {
+  font-size: 10px;
+  letter-spacing: 2.7px;
+  color: var(--muted);
+  margin-left: -66px;
+}
+.about-button {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  background: none;
+  font-size: 12px;
+}
+main {
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 5%;
+}
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 43px 0 33px;
+}
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #737e67;
+}
+.eyebrow > span {
+  width: 5px;
+  height: 5px;
+  background: #7c8e67;
+  border-radius: 50%;
+}
+h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 1.05;
+  letter-spacing: -1.6px;
+  margin: 13px 0 12px;
+}
+h1 em {
+  color: #728163;
+  font-weight: 400;
+}
+.intro p {
+  font-size: 13px;
+  color: #7e8176;
+  margin: 0;
+}
+.live-label {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3px;
+  color: #727b68;
+}
+.status-dot {
+  height: 6px;
+  width: 6px;
+  background: #839b6e;
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #839b6e10;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 288px;
+  gap: 22px;
+  align-items: stretch;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  margin-top: 30px;
+  padding: 19px 0 25px;
+}
+footer p {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 17px;
+  font-style: italic;
+  color: #8a917e;
+  margin: 0;
+}
+footer button {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  background: none;
+  font-size: 10px;
+  color: #7c866f;
+}

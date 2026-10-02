@@ -2,7 +2,7 @@
 
 ### A little room to unwind.
 
-An interactive cloth playground in a cozy, sunlit room. Pull the linen curtain, let a breeze in, or cut the fabric and watch it fall. Stillroom combines a calm interface with a real particle simulation rendered in Three.js.
+An interactive cloth playground in a cozy, sunlit room. Pull the linen curtain, let a breeze in, or cut the fabric and watch it fall. Stillroom combines a calm interface with a real particle simulation written in TypeScript and rendered in Three.js.
 
 ![Stillroom: a sunlit room with an interactive linen curtain](docs/stillroom.png)
 
@@ -40,7 +40,7 @@ Vite writes the static site to `dist/`. The base path is `/stillroom/` for GitHu
 
 ## Automatic deployment to GitHub Pages
 
-The workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs after every push to **`main` or `master`**. It installs dependencies from the lockfile, checks formatting and lint rules, runs physics tests, builds the site, and deploys `dist/` only after all checks pass.
+The workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs after every push to **`main` or `master`**. It installs dependencies from the lockfile, checks formatting, lint rules, and TypeScript types, runs the tests, builds the site, and deploys `dist/` only after all checks pass.
 
 One-time setup in the GitHub repository:
 
@@ -101,8 +101,8 @@ Stillroom is a visual, interactive simulation. Collisions use room bounds; there
 | Three.js                 | Room geometry, cloth mesh, lighting, shadows, and pointer raycasting                            |
 | Vite                     | Development server and production bundling                                                      |
 | Lucide React             | Interface icons                                                                                 |
-| Custom JavaScript solver | Particle integration, structural and shear constraints, dragging, cutting, and collision bounds |
-| Prettier + ESLint        | Consistent formatting and JavaScript / React Hooks checks                                       |
+| Custom TypeScript solver | Particle integration, structural and shear constraints, dragging, cutting, and collision bounds |
+| Prettier + ESLint        | Consistent formatting and TypeScript / React Hooks checks                                       |
 | Node.js test runner      | Physics stability, cutting, and reset tests                                                     |
 
 The room is assembled from geometry in code. There is no external physics engine or downloaded 3D model. The interface uses DM Sans and Instrument Serif from Google Fonts, with local fallback fonts when those cannot load.
@@ -111,17 +111,27 @@ The room is assembled from geometry in code. There is no external physics engine
 
 ```text
 src/
-  main.jsx          React UI, controls, keyboard shortcuts, and ambient audio
-  Scene.jsx         Three.js scene, rendering loop, and pointer interaction
-  physics.js        Cloth particles and constraint solver
-  physics.test.js   Stability, cutting, and reset tests
-  styles.css        Design tokens, layout, controls, and responsive styles
+  main.tsx             React entry point
+  app/                 Page composition, settings reducer, application commands
+  components/          Typed interface components and reusable controls
+  hooks/               Audio, fullscreen, notices, keyboard, and dialog focus
+  simulation/
+    physics/           Particle solver, grid, configuration, and model types
+    input/             Pointer capture, raycasting, and gestures
+    rendering/         Room, cloth buffers, and graphics resource cleanup
+    Simulation.ts      Fixed timestep, gusts, reset, and statistics
+    createSceneEngine.ts  Browser renderer and simulation lifecycle
+    types.ts           Settings, statistics, and engine API contracts
+  styles/              Tokens, component styles, and responsive overrides
 docs/
-  stillroom.png       Full-page screenshot
-vite.config.js      Vite configuration and GitHub Pages base path
-eslint.config.js    ESLint configuration
-.prettierrc.json     Formatting rules
+  ARCHITECTURE.md       Module responsibilities and extension guidance
+  stillroom.png        Full-page screenshot
+tsconfig.json          Strict TypeScript settings
+vite.config.ts         Vite configuration and GitHub Pages base path
+eslint.config.js       Lint rules and physics dependency boundaries
 ```
+
+See [Architecture](docs/ARCHITECTURE.md) for module boundaries, resource ownership, and the path from a user interaction to a rendered frame.
 
 ## Development commands
 
@@ -131,13 +141,14 @@ npm run build         # Build the production site
 npm run preview       # Preview the production build
 npm run format        # Apply Prettier formatting
 npm run format:check  # Check formatting without changing files
-npm run lint          # Check JavaScript and React Hooks; warnings fail the check
+npm run lint          # Check TypeScript and React Hooks; warnings fail the check
 npm run lint:fix      # Apply automatic ESLint fixes
-npm test              # Run physics tests
-npm run check         # Run formatting checks, ESLint, tests, and the build
+npm run typecheck     # Check application and test types
+npm test              # Run physics, interaction, rendering, and state tests
+npm run check         # Run formatting, lint, type checks, tests, and the build
 ```
 
-The tests cover sustained strong wind and dragging, pinned particle positions, finite coordinates and collision bounds, structural and shear cuts, detached fabric falling, and reset restoring the constraints.
+The tests cover solver stability, pinned particles, collision bounds, cutting, reset, frame-independent stepping, pause/resume, raycast dragging, pointer cancellation, settings transitions, wireframe buffer reuse, and resource cleanup.
 
 ## Community and policies
 

@@ -8,6 +8,7 @@ Stillroom aims to make its controls understandable and usable with different inp
 - Text labels for settings and accessible names for icon buttons and fabric colors.
 - Pressed states for the selected tool and fabric color.
 - Visible keyboard focus styles.
+- Keyboard focus stays inside the tips dialog; Escape closes it, and closing returns focus to its trigger.
 - A text description for the interactive scene and status announcements for brief notifications.
 - Controls to pause, resume, reset, and add a gust without dragging the fabric.
 - A responsive layout for narrow and wide screens.
@@ -19,7 +20,7 @@ When `prefers-reduced-motion: reduce` is enabled at page load, the simulation st
 
 Use **Tab** and **Shift+Tab** to move through controls. Activate buttons using **Enter** or **Space**. Native sliders can be adjusted with the arrow keys while focused.
 
-The app also provides these shortcuts when focus is outside a button, input, or select:
+The app provides the following shortcuts when the tips dialog is closed and focus is outside an editable field or button. Escape closes the tips dialog even when a control has focus.
 
 | Key        | Action            |
 | ---------- | ----------------- |
@@ -36,9 +37,8 @@ Tool shortcuts select a mode; they do not provide keyboard control of individual
 
 - Grabbing and cutting the fabric require mouse, touch, or another pointer input. There is no keyboard equivalent for selecting and moving particles or tracing cuts.
 - A screen reader can identify the scene and controls, but it cannot inspect the cloth geometry or receive a description of each deformation.
-- The tips dialog needs focus trapping and reliable restoration of focus after closing. Escape is currently ignored when a button, input, or select has focus, including the dialog's close button. The close button remains available for keyboard activation.
 - Several controls and labels are small. Touch target sizes, text contrast, zoom behavior, and screen reader combinations need a dedicated accessibility review.
-- The scene requires WebGL and does not currently provide an equivalent experience when rendering is unavailable.
+- The scene requires WebGL. A text message is shown if initialization fails, but an equivalent nonvisual simulation is not available.
 
 These gaps are useful areas for contributions. Improvements should preserve the ability to pause motion and use settings without interacting directly with the canvas.
 

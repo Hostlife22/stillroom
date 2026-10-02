@@ -1,0 +1,72 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #28302566;
+  backdrop-filter: blur(7px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.modal {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  width: 460px;
+  max-width: 100%;
+  padding: 38px;
+}
+.modal h2 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 39px;
+  margin: 17px 0;
+}
+.modal h2 em {
+  color: #788969;
+}
+.modal > p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #858b7c;
+}
+.close-button {
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  background: transparent;
+}
+.tip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  padding: 6px 0;
+}
+.tip > svg {
+  width: 20px;
+  flex-shrink: 0;
+  color: #7b8d69;
+}
+.tip p {
+  font-size: 11px;
+  color: #8b907e;
+  line-height: 1.7;
+}
+.tip b {
+  font-weight: 500;
+  color: #535e49;
+}
+.tip kbd {
+  margin-left: auto;
+  font-size: 10px;
+  border: 1px solid var(--border);
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.modal .modal-note {
+  font-size: 10px;
+  text-align: center;
+  margin-top: 20px;
+}

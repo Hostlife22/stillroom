@@ -1,0 +1,216 @@
+@media (min-width: 1600px) {
+  .stage {
+    min-height: 720px;
+  }
+  .panel {
+    padding: 30px;
+  }
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+  .control-section {
+    margin-top: 24px;
+    padding-top: 23px;
+  }
+  .under-scene {
+    max-width: calc(100% - 342px);
+  }
+}
+@media (max-width: 1100px) {
+  main {
+    padding: 0 4%;
+  }
+  .header {
+    margin: 0 4%;
+  }
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 16px;
+  }
+  .panel {
+    padding: 20px 18px 10px;
+  }
+  .physics-tag {
+    display: none !important;
+  }
+  .physics-stats {
+    gap: 10px;
+  }
+  .under-scene {
+    max-width: calc(100% - 276px);
+  }
+  .scene-controls > span {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .header {
+    height: 74px;
+  }
+  .header-caption {
+    display: none;
+  }
+  .intro {
+    padding: 32px 0 27px;
+  }
+  h1 {
+    font-size: 49px;
+  }
+  .live-label {
+    display: none;
+  }
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  .stage {
+    min-height: 560px;
+  }
+  .panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 26px;
+    padding: 24px;
+  }
+  .panel-title {
+    grid-column: 1/-1;
+    margin-bottom: 0;
+  }
+  .control-section {
+    margin-top: 18px;
+  }
+  .fabric-section {
+    grid-column: 2;
+    grid-row: 2/4;
+  }
+  .view-section {
+    grid-column: 1;
+  }
+  .reset-button {
+    grid-column: 2;
+  }
+  .under-scene {
+    max-width: none;
+  }
+  .physics-stats {
+    font-size: 8px;
+  }
+  .physics-tag {
+    display: flex !important;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    margin: 0 6%;
+  }
+  .brand {
+    font-size: 24px;
+  }
+  .about-button {
+    font-size: 10px;
+    gap: 6px;
+  }
+  main {
+    padding: 0 5%;
+  }
+  .intro {
+    padding-top: 28px;
+  }
+  h1 {
+    font-size: 47px;
+  }
+  .intro p {
+    font-size: 11px;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+  .stage {
+    min-height: 480px;
+  }
+  .scene-top {
+    left: 14px;
+    right: 14px;
+    top: 14px;
+  }
+  .scene-caption {
+    left: 18px;
+    top: 66px;
+  }
+  .scene-bottom {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+  .interaction-hint {
+    font-size: 10px;
+    padding: 11px 13px;
+    bottom: 65px;
+  }
+  .panel {
+    padding: 20px 16px;
+    column-gap: 20px;
+  }
+  .section-label {
+    font-size: 7px;
+  }
+  .tool-help {
+    font-size: 9px;
+  }
+  .tool-picker button {
+    font-size: 9px;
+    padding: 10px 2px;
+  }
+  .range-limits {
+    font-size: 8px;
+  }
+  .swatches {
+    gap: 8px;
+  }
+  .swatches button {
+    width: 22px;
+    height: 22px;
+  }
+  .physics-tag {
+    display: none !important;
+  }
+  .physics-stats {
+    gap: 7px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 155px;
+    font-size: 7px;
+  }
+  .under-scene {
+    gap: 10px;
+  }
+  .save-button {
+    display: none;
+  }
+  footer {
+    margin-top: 24px;
+  }
+  footer p {
+    font-size: 14px;
+  }
+  footer button {
+    font-size: 8px;
+    gap: 4px;
+  }
+  .toast {
+    font-size: 9px;
+    padding: 10px;
+    max-width: 95%;
+  }
+  .modal {
+    padding: 30px 24px;
+  }
+  .modal h2 {
+    font-size: 34px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

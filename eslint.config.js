@@ -1,8 +1,9 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 import reactHooks from 'eslint-plugin-react-hooks';
 
-export default [
+export default tseslint.config(
   {
     ignores: [
       'dist/**',
@@ -14,28 +15,48 @@ export default [
     ],
   },
   {
-    files: ['**/*.{js,jsx}'],
-    ...js.configs.recommended,
-    languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      globals: { ...globals.browser, ...globals.node },
-      parserOptions: { ecmaFeatures: { jsx: true } },
-    },
+    files: ['**/*.js'],
+    extends: [js.configs.recommended],
+    languageOptions: { globals: globals.node },
+  },
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    languageOptions: { globals: globals.browser },
     plugins: { 'react-hooks': reactHooks },
     rules: {
-      ...js.configs.recommended.rules,
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'error',
-      'no-unused-vars': [
+      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/no-unused-vars': [
         'error',
-        {
-          varsIgnorePattern: '^[A-Z]',
-          argsIgnorePattern: '^[A-Z_]',
-          caughtErrorsIgnorePattern: '^_',
-        },
+        { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' },
       ],
       'prefer-const': 'error',
     },
   },
-];
+  {
+    files: ['src/simulation/physics/**/*.ts', 'src/simulation/Simulation.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: [
+                'react',
+                'react-dom*',
+                'three',
+                '**/components/**',
+                '**/hooks/**',
+                '**/app/**',
+              ],
+              message:
+                'The physics layer must remain independent of React, Three.js, and browser adapters.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+);

@@ -28,14 +28,16 @@ git switch -c fix/short-description
 
 ## Working on the project
 
+Read [Architecture](docs/ARCHITECTURE.md) for module boundaries. Use TypeScript for application code and colocated tests. Keep physics independent of React, Three.js, and the DOM.
+
 | Area                                                       | Files                                            |
 | ---------------------------------------------------------- | ------------------------------------------------ |
-| Cloth particles, forces, constraints, and collision bounds | `src/physics.js`                                 |
-| Three.js room, rendering, and pointer interactions         | `src/Scene.jsx`                                  |
-| Controls, shortcuts, presets, and audio                    | `src/main.jsx`                                   |
-| Design tokens and responsive layout                        | `src/styles.css`                                 |
-| Physics tests                                              | `src/physics.test.js`                            |
-| GitHub Pages deployment                                    | `.github/workflows/deploy.yml`, `vite.config.js` |
+| Cloth particles, forces, constraints, and collision bounds | `src/simulation/physics/Cloth.ts`                |
+| Three.js room, rendering, and pointer interactions         | `src/simulation/`                                |
+| Controls, shortcuts, presets, and audio                    | `src/app/`, `src/components/`, `src/hooks/`      |
+| Design tokens and responsive layout                        | `src/styles/`                                    |
+| Physics tests                                              | `src/simulation/physics/Cloth.test.ts`           |
+| GitHub Pages deployment                                    | `.github/workflows/deploy.yml`, `vite.config.ts` |
 
 Keep changes focused. Follow the existing formatting, reuse interface components and CSS variables, and explain any changes to the solver's timestep or constraint behavior. Avoid adding dependencies for functionality already available in the project or browser.
 
@@ -48,7 +50,7 @@ npm run format
 npm run check
 ```
 
-`check` verifies formatting, runs ESLint and the physics tests, and builds the production site.
+`check` verifies formatting, runs ESLint, strict TypeScript checks, and the module tests, and builds the production site.
 
 For changes to physics or interaction behavior, add a regression test when practical and exercise the affected tools in the browser. Check dragging, release, wind, cutting, pause/resume, and reset. Include strong wind and low damping when changing numerical behavior.
 
