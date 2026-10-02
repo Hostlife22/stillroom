@@ -27,5 +27,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^16.5.0",
     "prettier": "^3.9.6"
-  }
+  },
+  "description": "Interactive 3D cloth simulation built with React and Three.js. Drag a linen curtain, add wind, and cut fabric in a cozy room with real-time physics.",
+  "license": "MIT"
 }

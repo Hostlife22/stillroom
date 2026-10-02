@@ -138,3 +138,10 @@ npm run check         # Run formatting checks, ESLint, tests, and the build
 ```
 
 The tests cover sustained strong wind and dragging, pinned particle positions, finite coordinates and collision bounds, structural and shear cuts, detached fabric falling, and reset restoring the constraints.
+
+## Community and policies
+
+- [Contributing](CONTRIBUTING.md): development setup, checks, and pull requests.
+- [Security](SECURITY.md): supported code and responsible vulnerability reporting.
+- [Accessibility](ACCESSIBILITY.md): current features, known limitations, and feedback.
+- [MIT License](LICENSE): copyright (c) 2026 Hostlife22. Third-party dependencies retain their own licenses.
