@@ -173,7 +173,7 @@ export default function Scene({ settings, api, onStats }) {
       return hit.clone();
     }
     function act(e) {
-      locate(e);
+      const p = locate(e);
       if (live.current.tool === 'cut') {
         if (previous) {
           const n = Math.ceil(p.distanceTo(previous) / 0.08);

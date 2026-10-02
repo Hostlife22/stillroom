@@ -24,6 +24,7 @@ export default [
     },
     plugins: { 'react-hooks': reactHooks },
     rules: {
+      ...js.configs.recommended.rules,
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'error',
       'no-unused-vars': [
